@@ -36,5 +36,5 @@ ENV CHROME_BIN=/usr/bin/chromium-browser \
     CHROME_PATH=/usr/lib/chromium/
 
 # Install NPM packages.
-RUN npm install -g npm@latest
+RUN npm install -g npm
 RUN npm install -g @angular/cli
