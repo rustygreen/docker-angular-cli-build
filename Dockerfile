@@ -35,10 +35,6 @@ WORKDIR /usr/src/app
 ENV CHROME_BIN=/usr/bin/chromium-browser \
     CHROME_PATH=/usr/lib/chromium/
 
-#Angular CLI
+# Install NPM packages.
+RUN npm install -g npm@latest
 RUN npm install -g @angular/cli
-
-COPY package.json /app/client/
-COPY package-lock.json /app/client/
-WORKDIR /app/client/
-RUN npm install
