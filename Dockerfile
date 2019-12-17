@@ -30,6 +30,9 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
     nss@edge \
     && rm -rf /var/cache/*
 
+# Installs git.
+RUN apk add --update git
+
 WORKDIR /usr/src/app
 
 ENV CHROME_BIN=/usr/bin/chromium-browser \
