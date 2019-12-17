@@ -30,8 +30,10 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
     nss@edge \
     && rm -rf /var/cache/*
 
-# Installs git.
-RUN apk add --update git
+# Installs git and openssh.
+RUN apk --update add git openssh && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm /var/cache/apk/*
 
 WORKDIR /usr/src/app
 
